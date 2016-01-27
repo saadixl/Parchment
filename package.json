@@ -1,0 +1,25 @@
+{
+  "name": "parchment",
+  "version": "1.0.0",
+  "description": "A dynamic list sharing web app",
+  "main": "parchserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saadixl/parchment.git"
+  },
+  "author": "Masudul Haque <saadixl@outlook.com> (http://saadixl.pw)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saadixl/parchment/issues"
+  },
+  "homepage": "https://github.com/saadixl/parchment#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.3.7",
+    "serve-static": "^1.10.2",
+    "shortid": "^2.2.4"
+  }
+}
