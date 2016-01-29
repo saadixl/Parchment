@@ -1,35 +1,91 @@
-body{
-	padding:20px 0;
-}
-.inputContainer{
-	padding: 15px 15px 0 15px;
-	background: #f5f5f5;
-	border-radius:5px;
-	box-shadow: 0 0 1px #777;
+* {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
 }
 
-.inputContainer input{
-	height: 50px;
-	font-size: 20px;
+body {
+    background-image: url(img/mainbg.png);
 }
-.listContainer{
-	border-radius: 5px;
-	background: #f5f5f5;
-	margin-top:20px;
-	box-shadow: 0 0 1px #777;
-	padding: 0;
+
+
+/* Navbar */
+
+.navbar {
+    border-radius: 0 !important;
+}
+
+.navbar-brand {
+    color: #fff !important;
+}
+
+.inputContainer {
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 0 1px silver;
+    margin: 0 0 20px 0;
+}
+
+.inputContainer .form-group {
+    margin-bottom: 0;
+}
+
+#listinput {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.listContainer {
+    background: #fff;
+    box-shadow: 0 0 1px silver;
+    padding: 0;
 }
 
 .listContainer article {
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid white;
-    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px 20px;
 }
 
-.listContainer article:first-child{
-	border-top: none;
+article.done {
+    text-decoration: line-through;
 }
 
-.listContainer article:last-child{
-	border-bottom: none;
+.listContainer article:first-child {
+    border-top: none;
+}
+
+.listContainer article:last-child {
+    border-bottom: none;
+}
+
+.listContainer article {
+    position: relative;
+}
+
+.iconContainer {
+    background: #fff;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.iconContainer span {
+    cursor: pointer;
+    color: silver;
+    font-size: 17px;
+}
+
+span.doneOn {
+    color: green;
+}
+
+.tick,
+.doneOn {
+    margin-right: 5px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 920px;
+    }
 }
