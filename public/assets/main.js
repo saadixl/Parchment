@@ -1,5 +1,12 @@
 // When the page loads for first time
 $(document).ready(function() {
+    var handleStr = window.location.pathname;
+    var handle = handleStr.substr(1);
+    $.get("/getHandle", {
+        "handle": handle
+    }, function(data) {
+        $(".listContainer").html(data);
+    });
     $("#listinput").focus();
 });
 
@@ -9,7 +16,7 @@ $('#listinput').keypress(function(e) {
     if (key == 13) {
         var fieldVal = $(this).val();
         if (fieldVal == "") {
-            alert("If you have nothing do, please go eat a banana!");
+            alert("If you have nothing to do, please go eat a banana!");
             initInput();
         } else {
             initInput();
@@ -29,6 +36,19 @@ function createNewToDo(v) {
         '<span class="glyphicon glyphicon-ok tick"></span>' +
         '<span class="glyphicon glyphicon-remove cross"></span>' +
         '</div></article>');
+
+    var markUp = $(".listContainer").clone();
+    var handleStr = window.location.pathname;
+    var handle = handleStr.substr(1);
+
+    $.post("/save", {
+            "handle": handle,
+            "markUp": markUp
+        },
+        function(data) {
+            $(".listContainer").html(data);
+        });
+
 }
 
 // When the task is done

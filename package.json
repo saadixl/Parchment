@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/saadixl/parchment#readme",
   "dependencies": {
+    "body-parser": "^1.14.2",
     "express": "^4.13.4",
+    "jade": "^1.11.0",
     "mongoose": "^4.3.7",
     "serve-static": "^1.10.2",
     "shortid": "^2.2.4"
