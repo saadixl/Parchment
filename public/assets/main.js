@@ -20,7 +20,7 @@ $('#listinput').keypress(function(e) {
             initInput();
         } else {
             initInput();
-            createNewToDo(fieldVal);
+            saveToDo(fieldVal);
         }
     }
 });
@@ -31,7 +31,7 @@ function initInput() {
 }
 
 // Function for creating a single todo
-function createNewToDo(v) {
+function saveToDo(v) {
     $(".listContainer").append("<article>" + v + '<div class="iconContainer">' +
         '<span class="glyphicon glyphicon-ok tick"></span>' +
         '<span class="glyphicon glyphicon-remove cross"></span>' +
