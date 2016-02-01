@@ -33,7 +33,9 @@ module.exports = function(app, URL) {
             handle: req.body.handle
         }, function(err, doc) {
             doc.markUp = req.body.markUp;
-            doc.save();
+            doc.save(function() {
+                res.end()
+            });
         });
     });
 
