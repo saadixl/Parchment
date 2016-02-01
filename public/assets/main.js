@@ -60,7 +60,7 @@ $(".listContainer").delegate(".tick", "click", function() {
     var cloneArticle = thisArticle.clone();
     thisArticle.remove();
     $(".listContainer").append(cloneArticle);
-    var fieldVal = $(".listContainer").val();
+    var fieldVal = $('#listinput').val();
     saveToDo(fieldVal);
 });
 
@@ -72,13 +72,13 @@ $(".listContainer").delegate(".doneOn", "click", function() {
     var cloneArticle = thisArticle.clone();
     thisArticle.remove();
     $(".listContainer").prepend(cloneArticle);
-    var fieldVal = $(".listContainer").val();
+    var fieldVal = $('#listinput').val();
     saveToDo(fieldVal);
 });
 
 // Removing a task
 $(".listContainer").delegate(".cross", "click", function() {
     $(this).parent().parent().remove();
-    var fieldVal = $(".listContainer").val();
+    var fieldVal = $('#listinput').val();
     saveToDo(fieldVal);
 });
