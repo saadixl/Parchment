@@ -12,7 +12,7 @@ module.exports = function(app, URL) {
         newURL.save(function(err, doc) {
             if (err) throw err;
             console.log('URL saved successfully!' + doc.handle);
-            res.redirect('http://localhost:8800/' + doc.handle);
+            res.redirect('http://107.170.128.220:8800/' + doc.handle);
         });
     });
 
