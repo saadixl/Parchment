@@ -1,5 +1,8 @@
 // When the page loads for first time
 $(document).ready(function() {
+    $(".listContainer").sortable();
+    $(".listContainer").disableSelection();
+
     var handleStr = window.location.pathname;
     var handle = handleStr.substr(1);
     //alert(handle);
