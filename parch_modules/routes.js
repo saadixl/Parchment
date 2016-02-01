@@ -43,8 +43,7 @@ module.exports = function(app, URL) {
     });
 
     app.get('/:handle', urlencodedParser, function(req, res) {
-        res.render('.. / public / views
-/index');
+        res.render('index');
     });
 
 }
