@@ -33,11 +33,12 @@ function initInput() {
 
 // Function for creating a single todo
 function saveToDo(v) {
-    $(".listContainer").append("<article>" + v + '<div class="iconContainer">' +
-        '<span class="glyphicon glyphicon-ok tick"></span>' +
-        '<span class="glyphicon glyphicon-remove cross"></span>' +
-        '</div></article>');
-
+    if (v !== null) {
+        $(".listContainer").append("<article>" + v + '<div class="iconContainer">' +
+            '<span class="glyphicon glyphicon-ok tick"></span>' +
+            '<span class="glyphicon glyphicon-remove cross"></span>' +
+            '</div></article>');
+    }
     var markUp = $(".listContainer").html().toString();
     var handleStr = window.location.pathname;
     var handle = handleStr.substr(1);
@@ -60,8 +61,7 @@ $(".listContainer").delegate(".tick", "click", function() {
     var cloneArticle = thisArticle.clone();
     thisArticle.remove();
     $(".listContainer").append(cloneArticle);
-    var fieldVal = $('#listinput').val();
-    saveToDo(fieldVal);
+    saveToDo(null);
 });
 
 // Reverting done task
@@ -72,13 +72,11 @@ $(".listContainer").delegate(".doneOn", "click", function() {
     var cloneArticle = thisArticle.clone();
     thisArticle.remove();
     $(".listContainer").prepend(cloneArticle);
-    var fieldVal = $('#listinput').val();
-    saveToDo(fieldVal);
+    saveToDo(null);
 });
 
 // Removing a task
 $(".listContainer").delegate(".cross", "click", function() {
     $(this).parent().parent().remove();
-    var fieldVal = $('#listinput').val();
-    saveToDo(fieldVal);
+    saveToDo(null);
 });
