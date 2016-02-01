@@ -16,25 +16,28 @@ module.exports = function(app, URL) {
         });
     });
 
-    app.get('/getHandle', urlencodedParser, function(req, res) {
+    app.post('/getHandle', urlencodedParser, function(req, res) {
+        //console.log("Looking for this handle: " + req.body.handle);
         URL.find({
-                handle: req.handle
+                handle: req.body.handle
             },
             // if exists then fetch the mark ups
             function(err, docs) {
                 if (docs.length == 1) {
+                    //console.log(docs[0].markUp);
                     res.send(docs[0].markUp);
                 }
             });
     });
 
     app.post('/save', urlencodedParser, function(req, res) {
-        Model.findOne({
+        //console.log("Received mark up: " + req.body.markUp);
+        URL.findOne({
             handle: req.body.handle
         }, function(err, doc) {
             doc.markUp = req.body.markUp;
             doc.save(function() {
-                res.end()
+                res.send()
             });
         });
     });

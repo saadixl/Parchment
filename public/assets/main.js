@@ -2,7 +2,8 @@
 $(document).ready(function() {
     var handleStr = window.location.pathname;
     var handle = handleStr.substr(1);
-    $.get("/getHandle", {
+    //alert(handle);
+    $.post("/getHandle", {
         "handle": handle
     }, function(data) {
         $(".listContainer").html(data);
@@ -37,7 +38,7 @@ function saveToDo(v) {
         '<span class="glyphicon glyphicon-remove cross"></span>' +
         '</div></article>');
 
-    var markUp = $(".listContainer").clone();
+    var markUp = $(".listContainer").html().toString();
     var handleStr = window.location.pathname;
     var handle = handleStr.substr(1);
 
@@ -46,7 +47,7 @@ function saveToDo(v) {
             "markUp": markUp
         },
         function(data) {
-            $(".listContainer").html(data);
+
         });
 
 }
@@ -59,6 +60,8 @@ $(".listContainer").delegate(".tick", "click", function() {
     var cloneArticle = thisArticle.clone();
     thisArticle.remove();
     $(".listContainer").append(cloneArticle);
+    var fieldVal = $(".listContainer").val();
+    saveToDo(fieldVal);
 });
 
 // Reverting done task
@@ -69,9 +72,13 @@ $(".listContainer").delegate(".doneOn", "click", function() {
     var cloneArticle = thisArticle.clone();
     thisArticle.remove();
     $(".listContainer").prepend(cloneArticle);
+    var fieldVal = $(".listContainer").val();
+    saveToDo(fieldVal);
 });
 
 // Removing a task
 $(".listContainer").delegate(".cross", "click", function() {
     $(this).parent().parent().remove();
+    var fieldVal = $(".listContainer").val();
+    saveToDo(fieldVal);
 });
