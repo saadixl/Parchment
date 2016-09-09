@@ -11,8 +11,10 @@ module.exports = function(app, URL) {
         });
         newURL.save(function(err, doc) {
             if (err) throw err;
-            console.log('URL saved successfully!' + doc.handle);
-            res.redirect('http://107.170.128.220:8800/' + doc.handle);
+            const url = require('url');
+            //console.log(url.host);
+            //console.log('URL saved successfully!' + doc.handle);
+            res.redirect( url.host + doc.handle);
         });
     });
 
