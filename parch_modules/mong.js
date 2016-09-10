@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var shortid = require('shortid');
-mongoose.connect('mongodb://localhost/parchment');
+mongoose.connect('mongodb://127.0.0.1/parchment');
 
 
 var urlSchema = new mongoose.Schema({
