@@ -14,7 +14,7 @@ module.exports = function(app, URL) {
             const url = require('url');
             console.log(url.host);
             //console.log('URL saved successfully!' + doc.handle);
-            res.redirect( url.host + doc.handle);
+            res.redirect(doc.handle);
         });
     });
 
